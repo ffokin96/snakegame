@@ -118,7 +118,12 @@ extension GameScene: SKPhysicsContactDelegate {
             apple?.removeFromParent()
             createApple()
             
-
+        case   CollisionCategories.EdgeBody:
+            snake?.removeFromParent()
+            snake = Snake(position: CGPoint(x: frame.midX, y: frame.midY))
+            addChild(snake!)
+            
+            
         default:
             break
         }
